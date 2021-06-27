@@ -1,7 +1,7 @@
 from flask import Flask, Blueprint, session, render_template, request, redirect, jsonify
-
+from routes import register_blueprint
 app = Flask(__name__)
-
+app = register_blueprint(app)
 #from flask_session import Session
 
 #SESSION_TYPE = 'filesystem'
