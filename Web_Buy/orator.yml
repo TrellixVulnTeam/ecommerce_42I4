@@ -1,0 +1,8 @@
+databases:
+    postgres:
+        driver: pgsql
+        host: localhost
+        database: webbuy
+        user: webbuy_user
+        password: webbuy12890
+        prefix: ''
