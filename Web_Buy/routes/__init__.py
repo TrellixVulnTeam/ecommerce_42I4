@@ -1,5 +1,5 @@
 from .communications_routes import com_routes
-from .automotive_routes import aut_routes
+from .automobile_routes import aut_routes
 from .fashion_routes import fas_routes
 from .health_routes import hea_routes
 from .finance_routes import fin_routes
