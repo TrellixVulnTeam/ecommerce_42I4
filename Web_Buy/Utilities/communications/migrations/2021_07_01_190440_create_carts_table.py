@@ -19,4 +19,4 @@ class CreateCartsTable(Migration):
         """
         Revert the migrations.
         """
-        self.schema.drop('carts')
+        self.schema.drop('cart_item')

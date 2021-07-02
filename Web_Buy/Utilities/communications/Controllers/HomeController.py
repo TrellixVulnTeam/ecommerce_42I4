@@ -2,6 +2,6 @@ from flask import Flask, Blueprint, session, render_template, request ,redirect,
 
 class HomeController:
     def home(self, request, response,parameters):
-        print(parameters)
+
         return render_template("/communications/home.html",dashboard_name="IT & Communications")
 

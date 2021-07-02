@@ -18,4 +18,4 @@ class CreateOrderItemsTable(Migration):
         """
         Revert the migrations.
         """
-        self.schema.drop('order_iteams')
+        self.schema.drop('order_items')
