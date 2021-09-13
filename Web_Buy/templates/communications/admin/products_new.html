@@ -1,0 +1,92 @@
+{% extends "communications/admin/communication_base.html" %}
+
+{%block content %}
+
+        <div class="app-main__outer">
+                    <div class="app-main__inner">
+                        <div class="app-page-title">
+                            <div class="page-title-wrapper">
+                                <div class="page-title-heading">
+                                    <div class="page-title-icon">
+<!--                                        <i class="pe-7s-car icon-gradient bg-mean-fruit">-->
+                                        </i>
+                                    </div>
+                                    <div>{{dashboard_name}}
+                                        <div class="page-title-subheading">  </div>
+                                    </div>
+                                </div>
+                                <div class="page-title-actions">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="main-card mb-3 card">
+                                            <div class="card-body"><h5 class="card-title">New Product</h5>
+                                                <form class="needs-validation" method="POST" action="/communications/admin/products/process-new">
+                                                    <div class="position-relative form-group">
+                                                        <label for="product_name" class="">Product Name</label>
+                                                        <input name="product_name" id="product_name" placeholder="Enter product name" type="text" class="form-control" required >
+                                                         <div class="valid-feedback">
+                                                            Looks good!
+                                                          </div>
+                                                    </div>
+
+                                                    <div class="position-relative form-group">
+                                                        <label for="product_description" class="">Product Description</label>
+                                                        <textarea name="product_description" id="product_description" class="form-control" placeholder="Enter description" required ></textarea>
+                                                    </div>
+
+
+                                                    <div class="position-relative form-group">
+                                                        <label for="product_price" class="">Product price</label>
+                                                        <input type="number" name="product_price" id="product_price" class="form-control" placeholder="Enter price" required >
+                                                    </div>
+
+
+                                                     <div class="position-relative form-group">
+                                                        <label for="cat_parent" class="">Category</label>
+                                                        <select name="cat_parent" id="cat_parent" class="form-control" >
+                                                        <option disabled >Select  Category</option>
+                                                        {% for cat in categories %}
+                                                            <option value="{{cat.id}}">{{cat.name}}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                    </div>
+                                                    <button class="mt-1 btn btn-primary">Submit</button>
+                                                </form>
+                                            </div>
+                                            <script>
+                                    // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                    (function() {
+                                        'use strict';
+                                        window.addEventListener('load', function() {
+                                            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                            var forms = document.getElementsByClassName('needs-validation');
+                                            // Loop over them and prevent submission
+                                            var validation = Array.prototype.filter.call(forms, function(form) {
+                                                form.addEventListener('submit', function(event) {
+                                                    if (form.checkValidity() === false) {
+                                                        event.preventDefault();
+                                                        event.stopPropagation();
+                                                    }
+                                                    form.classList.add('was-validated');
+                                                }, false);
+                                            });
+                                        }, false);
+                                    })();
+                                </script>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+
+                    </div>
+        </div>
+
+{%endblock%}

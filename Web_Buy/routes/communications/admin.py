@@ -51,3 +51,61 @@ def category_view(category_id):
         return route_loader.load(controller="CategoryController",action="view",request=request
                                  ,response = {},parameters={"category_id":category_id})
 
+@com_admin.route("/categories/edit/<category_id>")
+def category_edit(category_id):
+        return route_loader.load(controller="CategoryController",action="edit",request=request
+                                 ,response = {},parameters={"category_id":category_id})
+
+@com_admin.route("/categories/update/<category_id>",methods=["POST"])
+def category_update(category_id):
+        return route_loader.load(controller="CategoryController",action="update",request=request
+                                 ,response = {},parameters={"category_id":category_id})
+
+
+
+@com_admin.route("/categories/delete/<category_id>")
+def category_delete(category_id):
+        return route_loader.load(controller="CategoryController",action="delete",request=request
+                                 ,response = {},parameters={"category_id":category_id})
+
+@com_admin.route("/products/new")
+def products_new():
+        return route_loader.load(controller="ProductController",action="new",request=request
+                                 ,response = {},parameters={})
+@com_admin.route("/products/process-new",methods=["POST"])
+def products_process_new():
+        return route_loader.load(controller="ProductController",action="process_new",request=request
+                                 ,response = {},parameters={})
+@com_admin.route("/products/view-all")
+def products_view_all():
+        return route_loader.load(controller="ProductController",action="view_all",request=request
+                                 ,response = {},parameters={})
+#/products/trending"
+
+@com_admin.route("/products/view/<product_id>")
+def products_view(product_id):
+        return route_loader.load(controller="ProductController",action="view",request=request
+                                 ,response = {},parameters={"product_id":product_id})
+
+@com_admin.route("/products/image/<product_id>",methods=["POST"])
+def products_image_upload(product_id):
+        return route_loader.load(controller="ProductController",action="upload_image",request=request
+                                 ,response = {},parameters={"product_id":product_id})
+
+
+
+@com_admin.route("/products/trending")
+def trendy_listing():
+        return route_loader.load(controller="ProductController",action="trending",request=request
+                                 ,response = {},parameters={})
+
+@com_admin.route("/products/trending/",methods=["POST"])
+def trending_set():
+        return route_loader.load(controller="ProductController",action="trending_set",request=request
+                                 ,response = {},parameters={})
+#/communications/admin
+
+@com_admin.route("/trend/delete/<trend_id>")
+def trending_remove(trend_id):
+        return route_loader.load(controller="ProductController",action="trending_remove",request=request
+                                 ,response = {},parameters={"trend_id":trend_id})

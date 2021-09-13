@@ -13,6 +13,7 @@ class CreateProductsTable(Migration):
             table.string('description')
             table.double('price')
             table.double('image_directory')
+            table.integer('category_id')
             table.timestamps()
 
     def down(self):

@@ -1,0 +1,66 @@
+{% extends "communications/front/front_base_cart.html" %}
+
+{%block contents %}
+<style>
+
+img
+{
+   width: auto;
+   height: 300px;
+}
+</style>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="jumbotron jumbotron-fluid" style="background-color:white">
+
+  <h3 class="display-4" style="color595A58"></h3>
+  <p class="lead"></p>
+  <hr class="my-4">
+  <p style="">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">NAME</th>
+      <th scope="col">DESCRIPTION</th>
+      <th scope="col">ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for cart in carts %}
+  <tr>
+      <th>{{cart.cart_item_id}}</th>
+      <td>{{cart.name}}</td>
+      <td>{{cart.description}}</td>
+      <td>
+        <a href="/communications/user/product/view/{{cart.id}}" class="btn btn-warning">View</a>
+        <a href="/communications/user/cart/delete/{{cart.cart_item_id}}" class="btn btn-warning">Del..</a>
+      </td>
+  </tr>
+  {% endfor%}
+  </tbody>
+</table>
+    <a href="" class="btn btn-warning" onclick="alert('check out needs third party payment integrations')">Checkout</a>
+  </p>
+<br>
+    <br>
+</div>
+  <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{%endblock%}

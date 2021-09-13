@@ -21,66 +21,68 @@
     * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
     -->
 <link href="/static/communications/css/main.css" rel="stylesheet">
+<link href="/static/communications/css/background.css" rel="stylesheet">
 </head>
 <body>
-    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-        <div class="app-main">
-            <div class="app-main__outer">
-                    <div class="app-main__inner">
+            <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+                <div class="app-main">
+                    <div class="app-main__outer">
+                            <div class="app-main__inner">
 
-                        <div class="main-card mb-3 card">
-                            {% if error_message is defined %}
-                            <div class="alert alert-danger" role="alert">
-                                    {{error_message}}
-                            </div>
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">Administrator Login</h5>
-                                <form class="needs-validation" method="POST" action="/communications/admin/login-process" novalidate>
-                                    <div class="form-row">
-                                        <div class="col-md-4 mb-3">
-                                            <label for="email_address">Email Address </label>
-                                            <input type="email" class="form-control" id="email_address" name="email_address"  placeholder="Email Address" required>
-                                            <div class="valid-feedback">
-                                                Looks good!
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <label for="password">Password</label>
-                                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
-                                            <div class="valid-feedback">
-                                                Looks good!
-                                            </div>
-                                        </div>
+                                <div class="main-card mb-3 card">
+                                    {% if error_message is defined %}
+                                    <div class="alert alert-danger" role="alert">
+                                            {{error_message}}
                                     </div>
-                                    <button class="btn btn-primary" type="submit">Submit form</button>
-                                </form>
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">Administrator Login</h5>
+                                        <form class="needs-validation" method="POST" action="/communications/admin/login-process" novalidate>
+                                            <div class="form-row">
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="email_address">Email Address </label>
+                                                    <input type="email" class="form-control" id="email_address" name="email_address"  placeholder="Email Address" required>
+                                                    <div class="valid-feedback">
+                                                        Looks good!
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="password">Password</label>
+                                                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                                                    <div class="valid-feedback">
+                                                        Looks good!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary" type="submit">Submit form</button>
+                                        </form>
 
-                                <script>
-                                    // Example starter JavaScript for disabling form submissions if there are invalid fields
-                                    (function() {
-                                        'use strict';
-                                        window.addEventListener('load', function() {
-                                            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                                            var forms = document.getElementsByClassName('needs-validation');
-                                            // Loop over them and prevent submission
-                                            var validation = Array.prototype.filter.call(forms, function(form) {
-                                                form.addEventListener('submit', function(event) {
-                                                    if (form.checkValidity() === false) {
-                                                        event.preventDefault();
-                                                        event.stopPropagation();
-                                                    }
-                                                    form.classList.add('was-validated');
+                                        <script>
+                                            // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                            (function() {
+                                                'use strict';
+                                                window.addEventListener('load', function() {
+                                                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                                    var forms = document.getElementsByClassName('needs-validation');
+                                                    // Loop over them and prevent submission
+                                                    var validation = Array.prototype.filter.call(forms, function(form) {
+                                                        form.addEventListener('submit', function(event) {
+                                                            if (form.checkValidity() === false) {
+                                                                event.preventDefault();
+                                                                event.stopPropagation();
+                                                            }
+                                                            form.classList.add('was-validated');
+                                                        }, false);
+                                                    });
                                                 }, false);
-                                            });
-                                        }, false);
-                                    })();
-                                </script>
+                                            })();
+                                        </script>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
                     </div>
+                </div>
             </div>
-        </div>
-    </div>
-<script type="text/javascript" src="/static/assets/js/main.js"></script></body>
+            <script type="text/javascript" src="/static/assets/js/main.js"></script>
+</body>
 </html>

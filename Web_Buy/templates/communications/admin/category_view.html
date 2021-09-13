@@ -39,9 +39,18 @@
                                       <th scope="row">Description: </th>
                                       <td>{{category.description}}</td>
                                     </tr>
+
                                     <tr>
                                       <th scope="row">Parent Category: </th>
                                       <td><a href="{{category.parent_view}}" >{{category.parent_name}}</a></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Actions: </th>
+                                      <td><a href="/communications/admin/categories/edit/{{category.id}}" class="btn btn-warning" >&nbsp;Edit  &nbsp;</a></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Actions: </th>
+                                      <td><a href="/communications/admin/categories/delete/{{category.id}}" class="btn btn-danger" >Delete</a></td>
                                     </tr>
                                   </tbody>
                                 </table>

@@ -1,0 +1,41 @@
+
+<!-- Modal -->
+<div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="search-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-xl " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="search-modal-label"><img src="/static/assets/img/abc.jpg" width="70px"> Search</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/communications/user/search" method="POST">
+            <div class="form-group">
+              <label for="product_name">Product Name</label>
+              <input type="text" class="form-control" id="product_name" name="product_name" aria-describedby="emailHelp"
+                     placeholder="Enter product" required>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="category">Select Category</label>
+              <select class="form-control" id="category" name="category">
+                <option value="1234">All</option>
+                {% for category in categories %}
+                <option value="{{category.id}}">{{category.name}}</option>
+                {% endfor %}
+
+              </select>
+            </div>
+            <br>
+
+            <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
